@@ -1,0 +1,7 @@
+(defun rotate-array (myarr)
+  (let ((dim2 (array-dimensions myarr)))
+    (let ((rotarr (make-array dim2)))
+      (dotimes (a (car dim2))
+        (dotimes (b (car dim2))
+          (setf (aref rotarr b (1- (- (car dim2) a))) (aref myarr a b))))
+      rotarr)))

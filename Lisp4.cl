@@ -1,0 +1,5 @@
+(defun delete-car (mylist)
+  (cond ((null (cdr mylist)) nil)   
+        ((consp (cdr mylist)) 
+         (setf (car mylist) (cadr mylist) (cdr mylist) (cddr mylist)) mylist)
+        (t (cdr mylist))))
